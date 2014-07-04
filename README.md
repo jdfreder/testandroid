@@ -5,8 +5,8 @@
     sudo apt-get install python2.7
     sudo apt-get install lib32stdc++6 lib32z1
     wget http://python-distribute.org/distribute_setup.py
-    python distribute_setup.py
-    easy_install cython
+    sudo python distribute_setup.py
+    sudo easy_install cython
     sudo easy_install pip
     sudo pip install buildozer
 
