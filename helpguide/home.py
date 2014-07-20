@@ -5,10 +5,10 @@ from kivy.uix.stacklayout import StackLayout
 from kivy.uix.button import Button
 from kivy.uix.textinput import TextInput
 
-from test import TestBackend
 from page import PageBase
-from special import SpecialBackend
 from rich import RichPage
+from backends.test import TestBackend
+from backends.special import SpecialBackend
 
 class HomePage(PageBase):
     """HomePage of the App.
