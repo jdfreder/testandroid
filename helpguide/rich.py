@@ -52,7 +52,7 @@ class RichPage(BackwardsPage):
         self.body.add_widget(title_float)
         title_anchor = AnchorLayout(anchor_x='left', anchor_y='top', size_hint=(1., 1.), pos=(200., 30.))
         title_float.add_widget(title_anchor)
-        self._title = Label(text='', size_hint=(None, None), markup=True)
+        self._title = Label(text='', size_hint=(None, None), markup=True, halign='left')
         title_anchor.add_widget(self._title)
 
         self.reload()

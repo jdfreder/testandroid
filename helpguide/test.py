@@ -8,13 +8,13 @@ class TestBackend(backend.BackendBase):
         'page1': {
             'title': 'Hot',
             'subtitle': 'This page is awesome!',
-            'contents': 'This is a long description of heat and thermodynamics.',
+            'contents': 'This is a long description of heat and thermodynamics.\n\n\n\n',
             'links': ['page2'],
         },
         'page2': {
             'title': 'Cold',
             'subtitle': "Why read this?  Don't.",
-            'contents': 'Cold is a lack of heat.',
+            'contents': 'Cold is a lack of heat.\n\n\n\n',
             'links': ['page1'],
         },
     }

@@ -16,13 +16,12 @@ class BackwardsPage(PageBase):
             Reference to the history so we can return to it."""
         super(BackwardsPage, self).__init__(app)
 
+        if not isinstance(history, list):
+            history = [history]
         self.history = history
         def on_back_press(instance):
             self.hide()
-            if isinstance(history, list) and len(history) > 1:
-                self.history.pop().show()
-            else:
-                self.history.show()
+            self.history.pop().show()
 
         back_button = Button(text='Back', size_hint=(None, None))
         back_button.height = '50px'
@@ -32,5 +31,7 @@ class BackwardsPage(PageBase):
     def show(self, history=None):
         """Shows the page."""
         if history is not None:
+            if not isinstance(history, list):
+                history = [history]
             self.history = history
         super(BackwardsPage, self).show()
