@@ -1,8 +1,24 @@
 from kivy.app import App
-from kivy.uix.button import Button
+from kivy.uix.floatlayout import FloatLayout
 
-class TestApp(App):
+from helpguide.home import HomePage
+
+
+class HelpGuideApp(App):
+
     def build(self):
-        return Button(text='Hello World')
+        self.root = FloatLayout()
+        self.home = HomePage(self)
+        self.home.show()
+        return self.root
 
-TestApp().run()
+    def remove_widget(self, widget):
+        """Remove a widget from the app."""
+        self.root.remove_widget(widget)
+
+    def add_widget(self, widget):
+        """Add a widget to the app."""
+        self.root.add_widget(widget)
+
+
+HelpGuideApp().run()
