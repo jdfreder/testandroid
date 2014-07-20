@@ -9,22 +9,18 @@ class FlatfileBackend(backend.BackendBase):
         unique identifier) strings."""
         pass
 
-    def enumerate_categories(self):
-        """This will return a list of category names."""
+    def get_page_title(self, page_id):
+        """Gets the title of a page."""
         pass
 
-    def get_category_description(self, category_name):
-        """This will return a user friendly description string."""
+    def get_page_subtitle(self, page_id):
+        """Gets the subtitle of a page."""
         pass
 
-    def enumerate_category(self, category_name):
-        """Return a list of all of the page ids within that specific category."""
+    def get_page_contents(self, page_id):
+        """Get the topic contents."""
         pass
 
-    def get_topic_description(self, page_id):
-        """Get the user friendly topic description."""
-        pass
-
-    def get_topic_rst(self, page_id):
-        """Get the topic RST text."""
+    def get_page_links(self, page_id):
+        """Get the pages that are linked to from the page."""
         pass
