@@ -24,7 +24,7 @@ class HomePage(PageBase):
         self.backend = SpecialBackend(TestBackend())
 
         # Create a body manually, overriding the default.
-        self.body = anchor = AnchorLayout(anchor_x='center', anchor_y='center')
+        self.body = AnchorLayout(anchor_x='center', anchor_y='center')
         stack_layout = StackLayout(size_hint=(0.95, 0.6))
         self.body.add_widget(stack_layout)
 
@@ -43,14 +43,22 @@ class HomePage(PageBase):
         button_layout.height = '35px'
         stack_layout.add_widget(button_layout)
 
-        def on_button_press(sender):
+        def on_search_press(sender):
             self._on_search(self.query, self.query.text)
         search = Button(text='Search!')
         search.width = '50px'
-        search.bind(on_press=on_button_press)
+        search.bind(on_press=on_search_press)
         button_layout.add_widget(search)
 
         self.search_results = RichPage.get_page(app, [self], self.backend, 'search')
+
+        def on_category_press(sender):
+            RichPage.get_page(app, [self], self.backend, 'categories').show(self)
+            self.hide()
+        category = Button(text='Categories', size_hint=(None, None), height='35px')
+        category.width = '100px'
+        category.bind(on_press=on_category_press)        
+        self.body.add_widget(category)
 
     def _on_search(self, sender, value):
         """Called when the user trys to search."""

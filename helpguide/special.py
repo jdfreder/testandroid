@@ -7,7 +7,25 @@ class SpecialBackend(backend.BackendBase):
     def __init__(self, backend):
         """Constructor"""
         self._backend = backend
-        self._categories = {}
+        self._categories = {
+            'categories': {
+                'title': 'Categories',
+                'contents': 'List of categories:',
+                'links': ['html', 'css']
+            },
+            'html': {
+                'title': 'HTML',
+                'subtitle': 'Web page layout',
+                'contents': 'HTML topics:',
+                'links': self.get_category_links('html')
+            },
+            'css': {
+                'title': 'CSS',
+                'subtitle': 'Web page styling',
+                'contents': 'CSS topics:',
+                'links': self.get_category_links('html')
+            }
+        }
         self._search_results = []
         self._search_query = ''
 
@@ -52,9 +70,13 @@ class SpecialBackend(backend.BackendBase):
         if page_id == 'search':
             return self._search_results
         elif page_id in self._categories:
-            return self._categories[page_id]['links']
+            return self._categories[page_id].get('links', [])
         else:
             return self._backend.get_page_links(page_id)
+
+    def get_category_links(self, category):
+        """Get list of pages for a given category."""
+        return self._backend.get_category_links(category)
 
     def cached_search(self, query):
         """Perform a search and cache the results."""

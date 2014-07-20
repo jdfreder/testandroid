@@ -51,3 +51,8 @@ class TestBackend(backend.BackendBase):
             return TestBackend.pages[page_id]['links']
         else:
             return []
+
+    def get_category_links(self, category):
+        """Get list of pages for a given category."""
+        return TestBackend.pages.keys()
+

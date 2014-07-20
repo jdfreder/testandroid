@@ -23,3 +23,7 @@ class BackendBase(object):
     def get_page_links(self, page_id):
         """Get the pages that are linked to from the page."""
         pass
+
+    def get_category_links(self, category):
+        """Get list of pages for a given category."""
+        pass
