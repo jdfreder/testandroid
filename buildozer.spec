@@ -1,10 +1,10 @@
 [app]
 
 # (str) Title of your application
-title = My_Application
+title = Checklist
 
 # (str) Package name
-package.name = myapp
+package.name = kjchecklist
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = org.test
@@ -29,7 +29,7 @@ source.include_exts = py,png,jpg,kv,atlas
 # version.filename = %(source.dir)s/main.py
 
 # (str) Application versioning (method 2)
-version = 1.2.0
+version = 0.1.0
 
 # (list) Application requirements
 requirements = kivy
@@ -38,13 +38,13 @@ requirements = kivy
 #garden_requirements =
 
 # (str) Presplash of the application
-#presplash.filename = %(source.dir)s/data/presplash.png
+presplash.filename = %(source.dir)s/data/splash.png
 
 # (str) Icon of the application
-#icon.filename = %(source.dir)s/data/icon.png
+icon.filename = %(source.dir)s/data/icon.png
 
 # (str) Supported orientation (one of landscape, portrait or all)
-orientation = landscape
+orientation = all
 
 # (bool) Indicate if the application should be fullscreen or not
 fullscreen = 1
