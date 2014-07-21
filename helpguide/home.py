@@ -7,7 +7,7 @@ from kivy.uix.textinput import TextInput
 
 from page import PageBase
 from rich import RichPage
-from backends.test import TestBackend
+from backends.flatfile import FlatfileBackend
 from backends.special import SpecialBackend
 
 class HomePage(PageBase):
@@ -21,7 +21,7 @@ class HomePage(PageBase):
         super(HomePage, self).__init__(app)
 
         # Load the backend
-        self.backend = SpecialBackend(TestBackend())
+        self.backend = SpecialBackend(FlatfileBackend())
 
         # Create a body manually, overriding the default.
         self.body = AnchorLayout(anchor_x='center', anchor_y='center')

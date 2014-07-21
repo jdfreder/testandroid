@@ -1,0 +1,7 @@
+ {
+    "title": "Hot",
+    "subtitle": "This page is awesome!",
+    "contents": "This is a long description of heat and thermodynamics.\n\n\n\n",
+    "links": ["data/guide/cold.json"],
+    "category": "css"
+}
