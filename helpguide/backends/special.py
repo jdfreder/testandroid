@@ -23,7 +23,7 @@ class SpecialBackend(backend.BackendBase):
                 'title': 'CSS',
                 'subtitle': 'Web page styling',
                 'contents': 'CSS topics:',
-                'links': self.get_category_links('html')
+                'links': self.get_category_links('css')
             }
         }
         self._search_results = []
